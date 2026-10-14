@@ -1,0 +1,1023 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="The personal portfolio of Nikhil Sharma: projects, education, skills, and experience."
+    />
+    <meta name="theme-color" content="#0B1020" />
+    <title>Nikhil Sharma — Student &amp; Creative Thinker</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        color-scheme: dark;
+        --paper: #0B1020;
+        --ink: #F8FAFC;
+        --muted: #96A2B5;
+        --line: #26324A;
+        --green: #3B82F6;
+        --dark-green: #111A2D;
+        --white: #F8FAFC;
+        --sans: "Manrope", "Segoe UI", Arial, sans-serif;
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 88px;
+      }
+
+      body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: var(--sans);
+        font-size: 16px;
+        line-height: 1.6;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      a:focus-visible {
+        outline: 3px solid var(--green);
+        outline-offset: 4px;
+      }
+
+      .wrap {
+        width: min(1100px, calc(100% - 48px));
+        margin-inline: auto;
+      }
+
+      .site-header {
+        position: sticky;
+        z-index: 2;
+        top: 0;
+        border-bottom: 1px solid rgb(248 250 252 / 8%);
+        background: rgb(11 16 32 / 94%);
+        backdrop-filter: blur(14px);
+        color: var(--white);
+      }
+
+      .nav {
+        display: flex;
+        min-height: 76px;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+      }
+
+      .brand {
+        font-size: 15px;
+        font-weight: 750;
+        letter-spacing: -0.04em;
+        text-decoration: none;
+      }
+
+      .brand span {
+        color: var(--green);
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: clamp(18px, 3vw, 36px);
+      }
+
+      .nav-links a {
+        color: var(--muted);
+        font-size: 13px;
+        font-weight: 650;
+        text-decoration: none;
+        transition: color 160ms ease;
+      }
+
+      .nav-links a:hover {
+        color: var(--white);
+      }
+
+      .nav-links .nav-contact {
+        padding: 10px 16px;
+        border: 1px solid rgb(248 250 252 / 28%);
+        border-radius: 999px;
+        color: var(--white);
+      }
+
+      .hero {
+        display: grid;
+        width: 100%;
+        min-height: 680px;
+        grid-template-columns: 1.08fr 0.92fr;
+        align-items: center;
+        gap: 56px;
+        margin: 0;
+        padding: 82px max(24px, calc((100% - 1100px) / 2)) 96px;
+        background:
+          radial-gradient(ellipse at 78% 46%, rgb(59 130 246 / 14%), transparent 34%),
+          linear-gradient(125deg, #0B1020 0%, #10182A 100%);
+        color: var(--white);
+      }
+
+      .eyebrow {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin: 0 0 22px;
+        color: var(--muted);
+        font-size: 11px;
+        font-weight: 750;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+      }
+
+      .eyebrow::before {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--green);
+        content: "";
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin-top: 0;
+      }
+
+      h1 {
+        max-width: 650px;
+        margin-bottom: 24px;
+        font-size: clamp(54px, 8vw, 92px);
+        font-weight: 650;
+        letter-spacing: -0.085em;
+        line-height: 0.98;
+      }
+
+      h1 em {
+        color: var(--green);
+        font-family: var(--sans);
+        font-style: normal;
+        font-weight: 800;
+      }
+
+      .hero-copy {
+        max-width: 475px;
+        margin-bottom: 30px;
+        color: #B3BDCD;
+        font-size: 17px;
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 14px;
+      }
+
+      .button {
+        display: inline-flex;
+        min-height: 48px;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 0 20px;
+        border: 1px solid var(--green);
+        border-radius: 999px;
+        background: var(--green);
+        color: #0B1020;
+        font-size: 13px;
+        font-weight: 700;
+        text-decoration: none;
+        transition: transform 160ms ease, background 160ms ease;
+      }
+
+      .button:hover {
+        transform: translateY(-2px);
+        background: #5794F7;
+      }
+
+      .button.secondary {
+        border-color: rgb(255 255 255 / 42%);
+        background: transparent;
+        color: var(--white);
+      }
+
+      .button.secondary:hover {
+        background: rgb(255 255 255 / 10%);
+      }
+
+      .hero-art {
+        position: relative;
+        display: grid;
+        min-height: 520px;
+        place-items: center;
+        isolation: isolate;
+      }
+
+      .hero-art::before {
+        position: absolute;
+        z-index: -1;
+        width: min(430px, 92vw);
+        aspect-ratio: 1;
+        border: 1px solid rgb(59 130 246 / 22%);
+        border-radius: 50%;
+        background: radial-gradient(circle, rgb(59 130 246 / 12%), transparent 68%);
+        content: "";
+      }
+
+      .portrait-frame {
+        position: relative;
+        display: flex;
+        width: min(370px, 78vw);
+        flex-direction: column;
+        padding: 9px;
+        border: 1px solid rgb(248 250 252 / 16%);
+        border-radius: 210px 210px 24px 24px;
+        background: linear-gradient(155deg, #1B2943, #10182A 72%);
+        box-shadow: 0 30px 90px rgb(0 0 0 / 42%), 0 0 70px rgb(59 130 246 / 12%);
+      }
+
+      .portrait-frame::before {
+        position: absolute;
+        z-index: -1;
+        border: 1px solid rgb(59 130 246 / 44%);
+        border-radius: 210px 210px 24px 24px;
+        content: "";
+        inset: 20px -18px -18px 18px;
+      }
+
+      .portrait-frame img {
+        display: block;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 4 / 4.8;
+        border-radius: 200px 200px 14px 14px;
+        object-fit: cover;
+        object-position: center 24%;
+      }
+
+      .portrait-caption {
+        display: grid;
+        gap: 2px;
+        padding: 16px 14px 13px;
+      }
+
+      .portrait-caption strong {
+        font-size: 16px;
+        letter-spacing: -0.03em;
+      }
+
+      .portrait-caption span {
+        color: var(--muted);
+        font-size: 12px;
+      }
+
+      .float-note {
+        position: absolute;
+        right: -18px;
+        bottom: 40px;
+        padding: 12px 16px;
+        border: 1px solid rgb(59 130 246 / 45%);
+        border-radius: 999px;
+        background: #17233A;
+        box-shadow: 0 8px 24px rgb(0 0 0 / 18%);
+        color: #DCE9FF;
+        font-size: 12px;
+        font-weight: 700;
+      }
+
+      section.content-section {
+        padding-block: 88px;
+        border-top: 1px solid var(--line);
+      }
+
+      .section-heading {
+        display: grid;
+        grid-template-columns: 0.7fr 1.3fr;
+        gap: 50px;
+        margin-bottom: 42px;
+      }
+
+      .section-label {
+        margin: 8px 0 0;
+        color: #60A5FA;
+        font-size: 11px;
+        font-weight: 750;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+      }
+
+      h2 {
+        margin-bottom: 0;
+        font-size: clamp(34px, 5vw, 54px);
+        font-weight: 600;
+        letter-spacing: -0.065em;
+        line-height: 1.08;
+      }
+
+      .intro-grid {
+        display: grid;
+        grid-template-columns: 0.7fr 1.3fr;
+        gap: 50px;
+      }
+
+      .intro-aside {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: 190px;
+        padding: 22px;
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        background: #111A2D;
+      }
+
+      .intro-aside span {
+        font-size: 11px;
+        font-weight: 750;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      .intro-aside strong {
+        max-width: 190px;
+        font-family: var(--sans);
+        font-size: 28px;
+        font-weight: 700;
+        line-height: 1.12;
+      }
+
+      .intro-text {
+        max-width: 680px;
+        color: #B3BDCD;
+        font-size: clamp(16px, 1.2vw, 18px);
+        line-height: 1.85;
+        letter-spacing: 0.005em;
+      }
+
+      .intro-text p {
+        margin-bottom: 22px;
+      }
+
+      .about-project {
+        margin-block: 26px;
+        padding: 20px 24px;
+        border-left: 3px solid var(--green);
+        border-radius: 0 12px 12px 0;
+        background: #111A2D;
+      }
+
+      .about-project h3 {
+        margin-bottom: 8px;
+        color: var(--white);
+        font-size: 18px;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        line-height: 1.4;
+      }
+
+      .about-project p {
+        margin-bottom: 0;
+        color: var(--muted);
+        font-size: 15px;
+        line-height: 1.8;
+      }
+
+      .intro-text p:last-child {
+        margin-bottom: 0;
+      }
+
+      .project-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+      }
+
+      #work {
+        background: #0D1425;
+      }
+
+      #about,
+      #education {
+        background: #0D1425;
+      }
+
+      .project-card {
+        display: flex;
+        min-height: 245px;
+        flex-direction: column;
+        overflow: hidden;
+        border-radius: 14px;
+        border: 1px solid var(--line);
+        background: #111A2D;
+        text-decoration: none;
+        transition: transform 180ms ease, border-color 180ms ease;
+      }
+
+      .project-cover {
+        display: block;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+      }
+
+      .audiobook-cover {
+        background: #050812;
+        object-fit: contain;
+      }
+
+      .project-card-body {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 24px;
+      }
+
+      .project-card:hover {
+        transform: translateY(-4px);
+        border-color: #3B82F6;
+      }
+
+      .project-number {
+        margin: 0 24px;
+        color: #60A5FA;
+        font-size: 11px;
+        font-weight: 750;
+        letter-spacing: 0.12em;
+      }
+
+      .project-card h3 {
+        margin-top: 12px;
+        margin-bottom: 8px;
+        font-size: 25px;
+        font-weight: 600;
+        letter-spacing: -0.045em;
+      }
+
+      .project-card p {
+        max-width: 420px;
+        margin-bottom: 0;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .project-type {
+        margin-top: auto;
+        padding-top: 20px;
+        color: var(--muted);
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+
+      .split-section {
+        display: grid;
+        grid-template-columns: 0.7fr 1.3fr;
+        gap: 50px;
+      }
+
+      .timeline {
+        border-top: 1px solid var(--line);
+      }
+
+      .timeline-item {
+        display: grid;
+        grid-template-columns: 130px 1fr;
+        gap: 24px;
+        padding: 22px 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .timeline-date {
+        color: var(--muted);
+        font-size: 12px;
+      }
+
+      .timeline-item h3 {
+        margin-bottom: 4px;
+        font-size: 18px;
+        font-weight: 650;
+        letter-spacing: -0.03em;
+      }
+
+      .timeline-item p {
+        margin-bottom: 0;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .skills-section {
+        display: grid;
+        grid-template-columns: 0.7fr 1.3fr;
+        gap: 50px;
+      }
+
+      .skill-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(112px, 1fr));
+        align-content: start;
+        gap: 14px;
+      }
+
+      .skill-icon {
+        display: grid;
+        min-height: 132px;
+        align-content: center;
+        justify-items: center;
+        gap: 10px;
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        background: #111A2D;
+        box-shadow: 0 8px 20px rgb(0 0 0 / 18%);
+        transition: transform 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
+      }
+
+      .skill-icon:hover {
+        transform: translateY(-4px);
+        border-color: #3B82F6;
+        box-shadow: 0 12px 26px rgb(0 0 0 / 32%);
+      }
+
+      .skill-icon svg {
+        width: 42px;
+        height: 42px;
+      }
+
+      .skill-icon .skill-name {
+        color: var(--ink);
+        font-size: 12px;
+        font-weight: 700;
+      }
+
+      .skill-icon[aria-label="HTML"] svg {
+        color: #e34f26;
+      }
+
+      .skill-icon[aria-label="CSS"] svg {
+        color: #1572b6;
+      }
+
+      .skill-icon[aria-label="JavaScript"] svg {
+        color: #d6a600;
+      }
+
+      .skill-icon[aria-label="Communication"] svg,
+      .skill-icon[aria-label="Teamwork"] svg,
+      .skill-icon[aria-label="Problem-solving"] svg {
+        color: #60A5FA;
+      }
+
+      .contact-section {
+        margin-top: 88px;
+        padding: 58px;
+        border-radius: 14px;
+        border: 1px solid var(--line);
+        background: var(--dark-green);
+        color: var(--white);
+      }
+
+      .contact-section .section-label {
+        margin-bottom: 18px;
+        color: var(--green);
+      }
+
+      .contact-layout {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 30px;
+      }
+
+      .contact-layout h2 {
+        max-width: 550px;
+      }
+
+      .contact-layout p {
+        max-width: 440px;
+        margin: 16px 0 0;
+        color: #B3BDCD;
+      }
+
+      .contact-layout .button {
+        flex: 0 0 auto;
+        border-color: var(--green);
+        background: var(--green);
+        color: #0B1020;
+      }
+
+      .contact-layout .button:hover {
+        background: #5794F7;
+      }
+
+      .contact-actions {
+        display: flex;
+        flex: 0 0 auto;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .contact-actions .button.secondary {
+        border-color: rgb(255 255 255 / 42%);
+      }
+
+      footer {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        padding-block: 24px;
+        color: var(--muted);
+        font-size: 12px;
+      }
+
+      footer a {
+        text-decoration: none;
+      }
+
+      footer a:hover {
+        color: var(--ink);
+      }
+
+      @media (max-width: 860px) {
+        .wrap {
+          width: min(100% - 36px, 560px);
+        }
+
+        .nav {
+          min-height: 68px;
+        }
+
+        .nav-links {
+          gap: 15px;
+        }
+
+        .nav-links a {
+          font-size: 12px;
+        }
+
+        .nav-links .nav-contact {
+          padding: 8px 11px;
+        }
+
+        .hero {
+          min-height: auto;
+          grid-template-columns: 1fr;
+          gap: 16px;
+          padding-block: 76px 48px;
+        }
+
+        .hero.wrap {
+          width: 100%;
+          padding-inline: 18px;
+        }
+
+        h1 {
+          font-size: clamp(56px, 14vw, 82px);
+        }
+
+        .hero-art {
+          min-height: 500px;
+        }
+
+        .section-heading,
+        .intro-grid,
+        .split-section,
+        .skills-section {
+          grid-template-columns: 1fr;
+          gap: 24px;
+        }
+
+        section.content-section {
+          padding-block: 66px;
+        }
+
+        .section-heading {
+          margin-bottom: 30px;
+        }
+
+        .project-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .contact-section {
+          margin-top: 66px;
+          padding: 34px 26px;
+        }
+
+        .contact-layout {
+          align-items: start;
+          flex-direction: column;
+        }
+      }
+
+      @media (max-width: 430px) {
+        .nav {
+          gap: 8px;
+        }
+
+        .brand {
+          flex-shrink: 0;
+          font-size: 12px;
+          white-space: nowrap;
+        }
+
+        .nav-links {
+          gap: 8px;
+        }
+
+        .nav-links a {
+          font-size: 11px;
+        }
+
+        .nav-links a:nth-child(2) {
+          display: none;
+        }
+
+        .nav-links .nav-contact {
+          padding: 6px 8px;
+        }
+
+        .hero-copy {
+          font-size: 16px;
+        }
+
+        .timeline-item {
+          grid-template-columns: 1fr;
+          gap: 5px;
+        }
+
+        footer {
+          flex-direction: column;
+          gap: 7px;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          scroll-behavior: auto !important;
+          transition-duration: 0.01ms !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav wrap" aria-label="Main navigation">
+        <a class="brand" href="#home">NIKHIL SHARMA<span>.</span></a>
+        <div class="nav-links">
+          <a href="#about">About</a>
+          <a href="#work">Projects</a>
+          <a href="#education">Education</a>
+          <a class="nav-contact" href="#contact">Get in touch ↗</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero wrap" id="home" aria-labelledby="hero-title">
+        <div>
+          <p class="eyebrow">Student · Aspiring professional · Lifelong learner</p>
+          <h1 id="hero-title">Curious mind.<br />Making <em>things</em>.</h1>
+          <p class="hero-copy">
+            Hi, I’m <strong>Nikhil Sharma</strong> — an MCA student interested
+            in web development and design. I enjoy learning by doing and
+            turning ideas into thoughtful projects.
+          </p>
+          <div class="hero-actions">
+            <a class="button" href="#work">Explore my work <span aria-hidden="true">↓</span></a>
+            <a class="button secondary" href="#contact">Say hello <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+        <div class="hero-art">
+          <div class="portrait-frame">
+            <img
+              src="profile-photo.jpeg"
+              alt="Portrait of Nikhil Sharma"
+              width="1084"
+              height="1451"
+            />
+            <div class="portrait-caption">
+              <strong>Nikhil Sharma</strong>
+              <span>MCA Student · Aspiring Web Developer</span>
+            </div>
+          </div>
+          <div class="float-note">Open to opportunities</div>
+        </div>
+      </section>
+
+      <section class="content-section" id="about" aria-labelledby="about-title">
+        <div class="wrap">
+          <div class="section-heading">
+            <p class="section-label">01 / About me</p>
+            <h2 id="about-title">Good work starts with a curious question.</h2>
+          </div>
+          <div class="intro-grid">
+            <div class="intro-aside">
+              <span>I’m Nikhil Sharma, an MCA student passionate about web development and technology. I enjoy building creative projects like Voice of Books and continuously improving my skills to become a professional web developer.</span>
+              <strong>Stay curious. Keep making.</strong>
+            </div>
+            <div class="intro-text">
+              <p>
+                I’m Nikhil Sharma, an MCA student passionate about web
+                development and technology. I have a foundation in HTML, CSS,
+                JavaScript, computer fundamentals, and programming basics.
+              </p>
+              <article class="about-project">
+                <h3>Currently building: Voice of Books</h3>
+                <p>
+                  A responsive audiobook website where users can explore
+                  audiobooks, listen to audio content, and discover their
+                  favorite books through a modern, user-friendly interface.
+                </p>
+              </article>
+              <p>
+                I enjoy learning new technologies, building practical
+                projects, and improving my coding skills. My goal is to become
+                a skilled web developer and build innovative web applications.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section" id="work" aria-labelledby="work-title">
+        <div class="wrap">
+          <div class="section-heading">
+            <p class="section-label">02 / Selected work</p>
+            <h2 id="work-title">A few things I’ve been working on.</h2>
+          </div>
+          <div class="project-grid">
+            <a class="project-card" href="#contact">
+              <span class="project-number">PROJECT 01</span>
+              <img
+                class="project-cover audiobook-cover"
+                src="audiobook1.jpeg"
+                alt="Screenshot of the Voice of Books audiobook app interface and library"
+                width="1000"
+                height="667"
+                loading="lazy"
+              />
+              <div class="project-card-body">
+                <h3>Voice of Books — Audiobook App</h3>
+                <p>
+                  A responsive audiobook platform where people can explore a
+                  collection of books, discover new titles, and listen to audio
+                  content through a clear, welcoming interface.
+                </p>
+                <div class="project-type">Web design · Audiobooks</div>
+              </div>
+            </a>
+            <a class="project-card" href="#contact">
+              <span class="project-number">PROJECT 02</span>
+              <img
+                class="project-cover"
+                src="restaurant-project.jpg"
+                alt="A restaurant dining room and plated dish representing the restaurant website"
+                width="1000"
+                height="667"
+                loading="lazy"
+              />
+              <div class="project-card-body">
+                <h3>Restaurant Website</h3>
+                <p>
+                  A responsive website for a restaurant, presenting its food
+                  and dining experience in an inviting layout that helps guests
+                  explore the restaurant online.
+                </p>
+                <div class="project-type">Web design · Restaurant</div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section" id="education" aria-labelledby="education-title">
+        <div class="wrap split-section">
+          <div>
+            <p class="section-label">03 / Education &amp; experience</p>
+            <h2 id="education-title">Where I’m learning and growing.</h2>
+          </div>
+          <div class="timeline">
+            <article class="timeline-item">
+              <span class="timeline-date">[2026] — Present</span>
+              <div>
+                <h3>[MCA]</h3>
+                <p>[Marathwada Institute of Technology] · <div Bulandshahar=""></div></p>
+              </div>
+            </article>
+            <article class="timeline-item">
+              <span class="timeline-date">[2024] — [2025]</span>
+              <div>
+                <h3>[WORK ON  A COLLAGE PROJECT WITH A TEAM]</h3>
+                <p>[Organization or team] · [One-line contribution]</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section" id="skills" aria-labelledby="skills-title">
+        <div class="wrap skills-section">
+          <div>
+            <p class="section-label">04 / Things I bring</p>
+            <h2 id="skills-title">Skills I’m building.</h2>
+          </div>
+          <div class="skill-list" aria-label="Skills">
+            <div class="skill-icon" role="img" aria-label="HTML" title="HTML">
+              <svg viewBox="0 0 48 48" aria-hidden="true">
+                <path fill="currentColor" d="M8 4h32l-3 36-13 4-13-4L8 4Z" />
+                <path fill="#fff" d="m16 13 .5 5h15l-.5 4H17l1 10 6 2 6-2 .5-6h-5l-.2 2-1.3.5-1.5-.5-.3-3h12l1.5-16H16Z" />
+              </svg>
+              <span class="skill-name">HTML</span>
+            </div>
+            <div class="skill-icon" role="img" aria-label="CSS" title="CSS">
+              <svg viewBox="0 0 48 48" aria-hidden="true">
+                <path fill="currentColor" d="M8 4h32l-3 36-13 4-13-4L8 4Z" />
+                <path fill="#fff" d="m15 13 .5 5h16l-.5 4H16l.5 5h14l-.5 5-6 2-6-2-.3-3h-5l.8 7 10.5 3.5L34.5 36 36 13H15Z" />
+              </svg>
+              <span class="skill-name">CSS</span>
+            </div>
+            <div class="skill-icon" role="img" aria-label="JavaScript" title="JavaScript">
+              <svg viewBox="0 0 48 48" aria-hidden="true">
+                <path fill="currentColor" d="M4 4h40v40H4z" />
+                <path fill="#fff" d="M25 34c1 2 2 3 5 3 2 0 3-.8 3-2 0-1.5-1-2-3.5-3l-1-.5c-3-1.3-5-2.8-5-6.2 0-3.1 2.4-5.5 6.2-5.5 2.7 0 4.7 1 6.1 3.4l-3.4 2.2c-.8-1.4-1.6-1.9-2.7-1.9s-1.8.7-1.8 1.6c0 1.2.7 1.7 2.5 2.5l1 .4c3.6 1.6 5.6 3 5.6 6.5 0 3.7-2.9 5.8-6.9 5.8-3.9 0-6.4-1.9-7.6-4.4L25 34ZM10 34c.7 1.2 1.4 2.2 3 2.2 1.5 0 2.4-.6 2.4-3V20h4.5v13.2c0 4.7-2.7 6.8-6.6 6.8-3.6 0-5.6-1.9-6.7-4.2L10 34Z" />
+              </svg>
+              <span class="skill-name">JavaScript</span>
+            </div>
+            <div class="skill-icon" role="img" aria-label="Communication" title="Communication">
+              <svg viewBox="0 0 48 48" fill="none" aria-hidden="true">
+                <path d="M7 10.5A4.5 4.5 0 0 1 11.5 6h25a4.5 4.5 0 0 1 4.5 4.5v17a4.5 4.5 0 0 1-4.5 4.5H22l-9 8v-8h-1.5A4.5 4.5 0 0 1 7 27.5v-17Z" stroke="currentColor" stroke-width="3" stroke-linejoin="round" />
+                <path d="M15 16h18M15 23h12" stroke="currentColor" stroke-width="3" stroke-linecap="round" />
+              </svg>
+              <span class="skill-name">Communication</span>
+            </div>
+            <div class="skill-icon" role="img" aria-label="Teamwork" title="Teamwork">
+              <svg viewBox="0 0 48 48" fill="none" aria-hidden="true">
+                <circle cx="24" cy="15" r="6" stroke="currentColor" stroke-width="3" />
+                <circle cx="10" cy="19" r="4" stroke="currentColor" stroke-width="3" />
+                <circle cx="38" cy="19" r="4" stroke="currentColor" stroke-width="3" />
+                <path d="M11 39v-4a13 13 0 0 1 26 0v4H11ZM3 37v-3a8 8 0 0 1 5-7.4M45 37v-3a8 8 0 0 0-5-7.4" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <span class="skill-name">Teamwork</span>
+            </div>
+            <div class="skill-icon" role="img" aria-label="Problem-solving" title="Problem-solving">
+              <svg viewBox="0 0 48 48" fill="none" aria-hidden="true">
+                <path d="M17 30a12 12 0 1 1 14 0c-2 1.5-3 3-3 5h-8c0-2-1-3.5-3-5Z" stroke="currentColor" stroke-width="3" stroke-linejoin="round" />
+                <path d="M20 40h8M21 45h6M24 1v4M5 10l4 3M43 10l-4 3M3 25h5M40 25h5" stroke="currentColor" stroke-width="3" stroke-linecap="round" />
+              </svg>
+              <span class="skill-name">Problem-solving</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact-section wrap" id="contact" aria-labelledby="contact-title">
+        <p class="section-label">05 / Let’s connect</p>
+        <div class="contact-layout">
+          <div>
+            <h2 id="contact-title">Have an opportunity or an idea?</h2>
+            <p>
+              I’d love to hear from you about jobs, internships, college
+              opportunities, collaborations, or just to say hello.
+            </p>
+          </div>
+          <div class="contact-actions">
+            <a class="button" href="mailto:nikhilvansh33@gmail.com">
+              Email me <span aria-hidden="true">↗</span>
+            </a>
+            <a
+              class="button secondary"
+              href="tel:9557593221"
+              aria-label="Call Nikhil Sharma at the phone number ending in 3221"
+            >
+              Call ••••••3221 <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="wrap">
+      <span>© 2026 Nikhil Sharma. Made with curiosity.</span>
+      <a href="#home">Back to top ↑</a>
+    </footer>
+  </body>
+</html>
